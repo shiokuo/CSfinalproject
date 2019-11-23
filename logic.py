@@ -1,20 +1,15 @@
-dict{'atk':}
 def hit(fac,status):
     if status == 1:
         life_ob[0]-=atk*atk_up
-		#let monster shake a while(this part can be done next week)#
-		print(‘you use hit and make monster lost %f life’,atk*atk_up)
-		atk_up=1
-	#~	
+		print('Beat the monster: "ahah ahhhh..." The monster loses %f points of life.',%atk*atk_up)
+		atk_up=1	
 	return fac,1
 def charge(fac,status):
-	Atk_up*=1.2
+	atk_up*=1.2
 	return fac,2
-    #print
+    print("Next round, you'll attack the monster 0.2 stronger than you will originally.")
 def react(factor,skill_use,status):
 	if status == 1:
-		#do as monster using hit to us
-		#don’t forget printing
-	#~
+		atk_ob[0] -= atk_ob*atk_ob_up
+        print('The monster is attacking you... Be careful...\n"Ahhh"')
     return fac
-
