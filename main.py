@@ -1,11 +1,11 @@
-import ui 
-import logic
+import  ui 
+import  logic
 import pygame as pg 
 from pygame.locals import *
 #from sys import exit
 
 factor={'atk':30,'life':100,'atk_ob':[],'life_ob':[],'atk_up':1,'atk_ob_up':1}   #game factors(ob not finish)
-status={'main':0,'change':0,'fight':0,'subchoice':0,'reward':[0,0],'skill'=0}            
+status={'main':0,'change':0,'fight':0,'subchoice':0,'reward':[0,0],'skill':0}            
 #identify status
 #whether keyin for change plot work
 #whether we are in fight
@@ -17,12 +17,14 @@ pg.init()
 screen = pg.display.set_mode((640,480),0,32)        #set window
 pg.display.set_caption('RPG(project no.15)')        #set window title
 
-background=pg.image.load(' ').convert()
+background=pg.image.load('background.gif').convert()
 screen.blit(background,(0,0))
 pg.display.update()
 
 def ploting(f):
     status['change']=f(status['main'])
+    screen.blit(background,(0,0))
+    pg.display.update()
     if status['change']:
         status['main']+=1
         status['change']=0
@@ -34,21 +36,22 @@ def using(f):
     factor=logic.react(factor,status['skill'],status['main'])
     fight()
 def lose():
-    lose=pg.image.load(' ').convert()
-    screen.blit(background,(0,0))
+    lose=pg.image.load('lose.gif').convert()
+    screen.blit(lose,(0,0))
     status['fight']=0
     status['main']=-1
     pg.display.update()
 def win():
-    win=pg.image.load(' ').convert()
-    screen.blit(background,(0,0))
+    win=pg.image.load('win.gif').convert()
+    screen.blit(win,(0,0))
     factor['life_ob'].pop(0)
     factor['atk_ob'].pop(0)
     status['fight']=0
     status['main']+=1
+    pg.display.update()
 def reward(state):
     i=0
-    while i<len(status(reward)):
+    while i<len(status['reward']):
         if status[i] == 0:
             status[i] == state
             break
@@ -92,10 +95,11 @@ while True:
                     ui.choice_item(status['reward'])
                     status['subchoice']=3
             
-                if status['subchoice']==1:      #act(need discusion)
-                    if
-                
-                if status['subchoice']==2:      #attack(function not complete)
+                if status['subchoice'] == 1:      #act(need discusion)
+                    #if
+                    print(1)
+                                    
+                if status['subchoice'] == 2:      #attack(function not complete)
                     if event.key == K_q:
                         using(logic.hit)
                     if event.key == K_w:
