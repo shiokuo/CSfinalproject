@@ -7,15 +7,21 @@ def change_plot (status):
     else:
         return 0
 def fight(status):
+    width, height = 640, 480                      
+    screen = pygame.display.set_mode((width, height)) 
+    
     fight=pygame.image.load('FIGHT.PNG').convert()
     act=pygame.image.load('ACT.PNG').convert()
     tool=pygame.image.load('TOOL.PNG').convert()
     if status==1:
+        bg = pygame.Surface(screen.get_size())
+        bg = bg.convert()
+        bg.fill((255,255,255))
         enemy_1=pygame.image.load('stealer.png').convert()
-        pygame.blit(enemy_1,(250,240))
-        pygame.blit(fight,(600,0))
-        pygame.blit(act,(600,160))
-        pygame.blit(tool,(600,320))
+        bg.blit(enemy_1,(250,240))
+        bg.blit(fight,(600,0))
+        bg.blit(act,(600,160))
+        bg.blit(tool,(600,320))
         return 1
     else :
         return 0
