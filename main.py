@@ -1,5 +1,5 @@
-import  ui 
-import  logic
+import ui 
+import logic
 import pygame as pg 
 from pygame.locals import *
 #from sys import exit
