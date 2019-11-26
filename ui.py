@@ -2,20 +2,22 @@ import pygame
 def change_plot (status):
     if status==0:
         my_font = pygame.font.SysFont("arial", 16)
-        plot_1=my_font.render('you found your breakfast is stolen',(255,0,0))
+        plot_1=my_font.render('you found your breakfast is stolen',999,(255,0,0))
         return 1
     else:
         return 0
 def fight(status):
+    #screen = pygame.display.set_mode((640,480),0,32)
     fight=pygame.image.load('FIGHT.PNG').convert()
     act=pygame.image.load('ACT.PNG').convert()
     tool=pygame.image.load('TOOL.PNG').convert()
     if status==1:
         enemy_1=pygame.image.load('stealer.png').convert()
-        pygame.blit(enemy_1,(250,240))
-        pygame.blit(fight,(600,0))
-        pygame.blit(act,(600,160))
-        pygame.blit(tool,(600,320))
+        screen.blit(enemy_1,(250,240))
+        screen.blit(fight,(600,0))
+        screen.blit(act,(600,160))
+        screen.blit(tool,(600,320))
+        pygame.display.update()
         return 1
     else :
         return 0
