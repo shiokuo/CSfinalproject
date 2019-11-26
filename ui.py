@@ -45,16 +45,25 @@ def choice_battle(status):
     if status[0]!=1 and status[1]!=1:
         my_font = pygame.font.SysFont("arial", 16)
         plot_1=my_font.render('(q)attack\n(w)charging',(255,255,0))
+        x=2((640-plot_1.get_width()))/3
+        y=((480-plot_1.get_height()))/3
+        main.screen.blit(plot_1,(x,y))
         pygame.display.update()
 def choice_item(status):
     if status[0]!=2 and status[1]!=2:
         my_font = pygame.font.SysFont("arial", 16)
         plot_1=my_font.render('nothing',(255,0,0))
+        x=2((640-plot_1.get_width()))/3
+        y=((480-plot_1.get_height()))/3
+        main.screen.blit(plot_1,(x,y))
         pygame.display.update()
 def feed(status):
     if status==1:
         my_font = pygame.font.SysFont("arial", 30)
         plot_1=my_font.render('the thief bite you and ran away',(255,255,0))
+        x=((640-plot_1.get_width()))/2
+        y=((480-plot_1.get_height()))/2
+        main.screen.blit(plot_1,(x,y))
         pygame.display.update()
         return 1
     else:
@@ -63,6 +72,9 @@ def capture(status):
     if status==1:
         my_font = pygame.font.SysFont("arial", 30)
         plot_1=my_font.render('it ran away lol',(255,255,0))
+        x=((640-plot_1.get_width()))/2
+        y=((480-plot_1.get_height()))/2
+        main.screen.blit(plot_1,(x,y))
         pygame.display.update()
         return 1
     else:
@@ -71,5 +83,8 @@ def reward(status):
     if status==2:
         my_font = pygame.font.SysFont("arial", 16)
         plot_1=my_font.render('choose your reward\n(z)weaken\n(a)a new breakfast\n(c)a stick',(255,0,0))
+        x=2((640-plot_1.get_width()))/3
+        y=((480-plot_1.get_height()))/3
+        main.screen.blit(plot_1,(x,y))
         pygame.display.update()
 
