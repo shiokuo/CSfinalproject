@@ -2,7 +2,7 @@ import main.factor as fac
 def hit(status):
 	if status == 1:
 		fac[life_ob[0]]-=fac[atk]*fac[atk_up]
-		print('Beat the monster: "ahah ahhhh..." The monster loses %f points of life.',% atk*atk_up)
+		print('Beat the monster: "ahah ahhhh..." The monster loses %f points of life.'% (atk*atk_up))
 		fac[atk_up]=1	
 	return fac,1
 def charge(status):
