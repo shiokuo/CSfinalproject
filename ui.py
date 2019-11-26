@@ -6,6 +6,7 @@ def change_plot (status):
         plot_1=my_font.render('you found your breakfast is stolen',999,(255,0,0))
         x=((640-plot_1.get_width()))/2
         x=((480-plot_1.get_height()))/2
+        main.screen.blit(plot_1,(x,y))
         pygame.display.update()
         return 1
     else:
