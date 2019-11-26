@@ -4,7 +4,7 @@ import pygame as pg
 from pygame.locals import *
 #from sys import exit
 
-factor={'atk':30,'life':100,'atk_ob':[],'life_ob':[],'atk_up':1,'atk_ob_up':1}   #game factors(ob not finish)
+factor={'atk':30,'life':100,'atk_ob':[10],'life_ob':[100],'atk_up':1,'atk_ob_up':1}   #game factors(ob not finish)
 status={'main':0,'change':0,'fight':0,'subchoice':0,'reward':[0,0],'skill':0}            
 #identify status
 #whether keyin for change plot work
