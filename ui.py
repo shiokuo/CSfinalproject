@@ -5,7 +5,7 @@ def change_plot (status):
         my_font = pygame.font.SysFont("arial", 16)
         plot_1=my_font.render('you found your breakfast is stolen',999,(255,0,0))
         x=((640-plot_1.get_width()))/2
-        x=((480-plot_1.get_height()))/2
+        y=((480-plot_1.get_height()))/2
         main.screen.blit(plot_1,(x,y))
         pygame.display.update()
         return 1
@@ -34,6 +34,9 @@ def choice_event(status):
     if status ==1:
         my_font = pygame.font.SysFont("arial", 16)
         plot_1=my_font.render('(a)feed more food\n(b)capture it',(255,0,0))
+        x=2((640-plot_1.get_width()))/3
+        y=((480-plot_1.get_height()))/3
+        main.screen.blit(plot_1,(x,y))
         pygame.display.update()
         return 1
     else:
