@@ -1,31 +1,32 @@
 import pygame
-import main
+screen = pygame.display.set_mode((640,480),0,32)
+#import main
 def change_plot (status):
     if status==0:
         my_font = pygame.font.SysFont("arial", 16)
         plot_1=my_font.render('you found your breakfast is stolen',999,(255,0,0))
         x=((640-plot_1.get_width()))/2
         y=((480-plot_1.get_height()))/2
-        main.screen.blit(plot_1,(x,y))
+        screen.blit(plot_1,(x,y))
         pygame.display.update()
         return 1
     else:
         return 0
 def fight(status):
     #width, height = 640, 480                      
-    #main.screen = pygame.display.set_mode((width, height)) 
+    #screen = pygame.display.set_mode((width, height)) 
     fight=pygame.image.load('FIGHT.PNG').convert()
     act=pygame.image.load('ACT.PNG').convert()
     tool=pygame.image.load('TOOL.PNG').convert()
     if status==1:
-        #main.screen = pygame.Surface(main.screen.get_size())
-        #main.screen = main.screen.convert()
-        #main.screen.fill((255,255,255))
+        #screen = pygame.Surface(screen.get_size())
+        #screen = screen.convert()
+        #screen.fill((255,255,255))
         enemy_1=pygame.image.load('stealer.png').convert()
-        main.screen.blit(enemy_1,(250,240))
-        main.screen.blit(fight,(600,0))
-        main.screen.blit(act,(600,160))
-        main.screen.blit(tool,(600,320))
+        screen.blit(enemy_1,(250,240))
+        screen.blit(fight,(600,0))
+        screen.blit(act,(600,160))
+        screen.blit(tool,(600,320))
         pygame.display.update()
         return 1
     else :
@@ -36,7 +37,7 @@ def choice_event(status):
         plot_1=my_font.render('(a)feed more food\n(b)capture it',(255,0,0))
         x=2((640-plot_1.get_width()))/3
         y=((480-plot_1.get_height()))/3
-        main.screen.blit(plot_1,(x,y))
+        screen.blit(plot_1,(x,y))
         pygame.display.update()
         return 1
     else:
@@ -47,7 +48,7 @@ def choice_battle(status):
         plot_1=my_font.render('(q)attack\n(w)charging',(255,255,0))
         x=2((640-plot_1.get_width()))/3
         y=((480-plot_1.get_height()))/3
-        main.screen.blit(plot_1,(x,y))
+        screen.blit(plot_1,(x,y))
         pygame.display.update()
 def choice_item(status):
     if status[0]!=2 and status[1]!=2:
@@ -55,7 +56,7 @@ def choice_item(status):
         plot_1=my_font.render('nothing',(255,0,0))
         x=2((640-plot_1.get_width()))/3
         y=((480-plot_1.get_height()))/3
-        main.screen.blit(plot_1,(x,y))
+        screen.blit(plot_1,(x,y))
         pygame.display.update()
 def feed(status):
     if status==1:
@@ -63,7 +64,7 @@ def feed(status):
         plot_1=my_font.render('the thief bite you and ran away',(255,255,0))
         x=((640-plot_1.get_width()))/2
         y=((480-plot_1.get_height()))/2
-        main.screen.blit(plot_1,(x,y))
+        screen.blit(plot_1,(x,y))
         pygame.display.update()
         return 1
     else:
@@ -74,7 +75,7 @@ def capture(status):
         plot_1=my_font.render('it ran away lol',(255,255,0))
         x=((640-plot_1.get_width()))/2
         y=((480-plot_1.get_height()))/2
-        main.screen.blit(plot_1,(x,y))
+        screen.blit(plot_1,(x,y))
         pygame.display.update()
         return 1
     else:
@@ -85,6 +86,6 @@ def reward(status):
         plot_1=my_font.render('choose your reward\n(z)weaken\n(a)a new breakfast\n(c)a stick',(255,0,0))
         x=2((640-plot_1.get_width()))/3
         y=((480-plot_1.get_height()))/3
-        main.screen.blit(plot_1,(x,y))
+        screen.blit(plot_1,(x,y))
         pygame.display.update()
 

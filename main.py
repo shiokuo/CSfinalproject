@@ -21,10 +21,11 @@ background=pg.image.load('background.gif').convert()
 screen.blit(background,(0,0))
 pg.display.update()
 
+ui.change_plot(1)
 def ploting(f):
     status['change']=f(status['main'])
     screen.blit(background,(0,0))
-    pg.display.update()
+    #pg.display.update()
     if status['change']:
         status['main']+=1
         status['change']=0
@@ -86,7 +87,7 @@ while True:
                     win()
                 
                 if event.key == K_1:
-                    ui.choice_event()
+                    ui.choice_event(status['reward'])
                     status['subchoice']=1
                 if event.key == K_2:
                     ui.choice_battle(status['reward'])
