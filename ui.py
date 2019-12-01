@@ -35,7 +35,7 @@ def choice_event(status):
     if status ==1:
         my_font = pygame.font.SysFont("arial", 16)
         plot_1=my_font.render('(a)feed more food\n(b)capture it',999,(255,0,0))
-        x=2((640-plot_1.get_width()))/3
+        x=2*((640-plot_1.get_width()))/3
         y=((480-plot_1.get_height()))/3
         screen.blit(plot_1,(x,y))
         pygame.display.update()
@@ -46,7 +46,7 @@ def choice_battle(status):
     if status[0]!=1 and status[1]!=1:
         my_font = pygame.font.SysFont("arial", 16)
         plot_1=my_font.render('(q)attack\n(w)charging',999,(255,255,0))
-        x=2((640-plot_1.get_width()))/3
+        x=2*((640-plot_1.get_width()))/3
         y=((480-plot_1.get_height()))/3
         screen.blit(plot_1,(x,y))
         pygame.display.update()
@@ -54,7 +54,7 @@ def choice_item(status):
     if status[0]!=2 and status[1]!=2:
         my_font = pygame.font.SysFont("arial", 16)
         plot_1=my_font.render('nothing',999,(255,0,0))
-        x=2((640-plot_1.get_width()))/3
+        x=2*((640-plot_1.get_width()))/3
         y=((480-plot_1.get_height()))/3
         screen.blit(plot_1,(x,y))
         pygame.display.update()
@@ -84,7 +84,7 @@ def reward(status):
     if status==2:
         my_font = pygame.font.SysFont("arial", 16)
         plot_1=my_font.render('choose your reward\n(z)weaken\n(a)a new breakfast\n(c)a stick',999,(255,0,0))
-        x=2((640-plot_1.get_width()))/3
+        x=2*((640-plot_1.get_width()))/3
         y=((480-plot_1.get_height()))/3
         screen.blit(plot_1,(x,y))
         pygame.display.update()
