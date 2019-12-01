@@ -3,7 +3,7 @@ screen = pygame.display.set_mode((640,480),0,32)
 #import main
 def change_plot (status):
     if status==0:
-        my_font = pygame.font.SysFont("arial", 16)
+        my_font = pygame.font.SysFont("arial", 50)
         plot_1=my_font.render('you found your breakfast is stolen',999,(255,0,0))
         x=((640-plot_1.get_width()))/2
         y=((480-plot_1.get_height()))/2
@@ -23,10 +23,10 @@ def fight(status):
         #screen = screen.convert()
         #screen.fill((255,255,255))
         enemy_1=pygame.image.load('stealer.png').convert()
-        screen.blit(enemy_1,(250,240))
-        screen.blit(fight,(600,0))
-        screen.blit(act,(600,160))
-        screen.blit(tool,(600,320))
+        screen.blit(enemy_1,(200,200))
+        screen.blit(fight,(0,0))
+        screen.blit(act,(0,160))
+        screen.blit(tool,(0,320))
         pygame.display.update()
         return 1
     else :
