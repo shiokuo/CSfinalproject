@@ -8,7 +8,7 @@ def charge(factor,status):
 	factor[atk_up]*=1.2 #to be adjusted
 	return factor,2
 	print("Next round, you'll attack the monster 0.2 stronger than you will originally.")
-def react(skill_use,status):
+def react(factor,status):
 	if status == 1:
 		factor[life_atk_ob[0]] -= factor[atk_ob]*factor[atk_ob_up]
 		print('The monster is attacking you... Be careful...\n"Ahhh"')
