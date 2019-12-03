@@ -88,4 +88,5 @@ def reward(status):
         y=((480-plot_1.get_height()))/3
         screen.blit(plot_1,(x,y))
         pygame.display.update()
+        return 1
 

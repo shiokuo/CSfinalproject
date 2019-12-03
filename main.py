@@ -25,7 +25,7 @@ ui.change_plot(1)
 def ploting(f):
     status['change']=f(status['main'])
     screen.blit(background,(0,0))
-    #pg.display.update()
+    #pg.display.update()            need to be solve
     if status['change']:
         status['main']+=1
         status['change']=0
@@ -86,13 +86,13 @@ while True:
                 if factor['life_ob'][0]<=0:
                     win()
                 
-                if event.key == K_1:
+                if event.key == K_1 and status['subchoice']==0:
                     ui.choice_event(status['reward'])
                     status['subchoice']=1
-                if event.key == K_2:
+                if event.key == K_2 and status['subchoice']==0:
                     ui.choice_battle(status['reward'])
                     status['subchoice']=2
-                if event.key == K_3:
+                if event.key == K_3 and status['subchoice']==0:
                     ui.choice_item(status['reward'])
                     status['subchoice']=3
             
