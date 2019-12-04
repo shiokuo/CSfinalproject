@@ -33,6 +33,7 @@ def fight():
     status['fight']=ui.fight(status['main'])
     status['subchoice']=0
 def using(f):
+    global factor
     factor,status['skill']=f(factor)
     factor=logic.react(factor,status['skill'],status['main'])
     fight()
