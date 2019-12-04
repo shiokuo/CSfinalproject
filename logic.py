@@ -9,7 +9,7 @@ def charge(factor):
 	return (factor,2)
 def react(factor,skill_use,status):
 	if status == 1:
-		factor['life_atk_ob'][0] -= factor['atk_ob']*factor['atk_ob_up']
+		factor['life'] -= factor['atk_ob'][0]*factor['atk_ob_up']
 		print('The monster is attacking you... Be careful...\n"Ahhh"')
 	return factor
 	
