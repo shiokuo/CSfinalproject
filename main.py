@@ -19,6 +19,15 @@ pg.display.set_caption('RPG(project no.15)')        #set window title
 
 background=pg.image.load('background.gif').convert()
 screen.blit(background,(0,0))
+
+my_font = pg.font.SysFont("arial", 50)
+plot_1=my_font.render('Welcome to CK',999,(150,255,0))
+x_1=((640-plot_1.get_width()))/2
+y_1=((480-plot_1.get_height()))/2
+plot_2 = my_font.render('press Enter to continue',1,(255,0,0))
+x_2=((640-plot_2.get_width()))/2
+screen.blit(plot_1,(x_1,y_1))
+screen.blit(plot_2,(x_2,410))
 pg.display.update()
 
 ui.change_plot(1)
