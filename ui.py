@@ -1,12 +1,21 @@
 import pygame
 screen = pygame.display.set_mode((640,480),0,32)
+background=pygame.image.load('background.gif').convert()
 #import main
+def word(string,color=(255,0,0),coef=1,size=50):
+    my_font = pygame.font.SysFont("arial", size)
+    plot = my_font.render(string,999,color)
+    x=((640-plot.get_width()))/2
+    y=((480-plot.get_height()))
+    screen.blit(plot,(x,y*coef))
+
 def change_plot (status):
     if status==0:
         my_font = pygame.font.SysFont("arial", 50)
         plot_1=my_font.render('you found your breakfast is stolen',999,(255,0,0))
         x=((640-plot_1.get_width()))/2
         y=((480-plot_1.get_height()))/2
+        screen.blit(background,(0,0))
         screen.blit(plot_1,(x,y))
         pygame.display.update()
         return 1

@@ -5,12 +5,13 @@ from pygame.locals import *
 #from sys import exit
 
 factor={'atk':30,'life':100,'atk_ob':[10],'life_ob':[100],'atk_up':1,'atk_ob_up':1} # game factors(atk_ob & life_ob to be finished)
-status={'main':0,'change':0,'fight':0,'subchoice':0,'reward':[0,0],'skill':0}            
+status={'main':0,'change':0,'fight':0,'subchoice':0,'reward':[0,0],'skill':0}
+
 #identify status
 #whether keyin for change plot work
-#whether we are in fight
-#what subcoice we're in 
-#what we choose for reward
+#in fight:1 ; reward:2 ; else:0
+#choicing:0 ; event:1 ; fight:2 ; item:3 
+#nothing:0 ; skill:1 ; item:2 ; item been used or factor change:3
 
 
 pg.init()
@@ -20,18 +21,13 @@ pg.display.set_caption('RPG(project no.15)')        #set window title
 background=pg.image.load('background.gif').convert()
 screen.blit(background,(0,0))
 
-my_font = pg.font.SysFont("arial", 50)
-plot_1=my_font.render('Welcome to CK',999,(150,255,0))
-x_1=((640-plot_1.get_width()))/2
-y_1=((480-plot_1.get_height()))/2
-plot_2 = my_font.render('press Enter to continue',1,(255,0,0))
-x_2=((640-plot_2.get_width()))/2
-screen.blit(plot_1,(x_1,y_1))
-screen.blit(plot_2,(x_2,410))
+ui.word('Welcome to CK',(150,255,0),0.5)
+ui.word('press Enter to continue')
 pg.display.update()
 
-ui.change_plot(1)
-def ploting(f):
+ui.change_plot(1)   #?
+
+def ploting(f): 
     status['change']=f(status['main'])
     screen.blit(background,(0,0))
     #pg.display.update()            need to be solve
@@ -55,6 +51,10 @@ def lose():
 def win():
     win=pg.image.load('win.gif').convert()
     screen.blit(win,(0,0))
+    ui.word('you beat the thief and get something',(150,150,50),0.5)
+    ui.word('press v to choose item')
+    #screen.blit(plot.plot,(plot.x,plot.y/2))
+    #screen.blit(express.plot,(express.x,express.y))
     factor['life_ob'].pop(0)
     factor['atk_ob'].pop(0)
     status['fight']=0
@@ -63,11 +63,13 @@ def win():
 def reward(state):
     i=0
     while i<len(status['reward']):
-        if status[i] == 0:
-            status[i] == state
+        if status['reward'][i] == 0:
+            status[i] = state
             break
         i+=1
     status['main']+=1
+    status['fight']=0
+    #print(status['main'])
     return i                        
                   
 while True:
@@ -75,13 +77,21 @@ while True:
         if event.type == QUIT:
             exit()
         
+        if factor['life']<=0:
+            lose()
+        if factor['life_ob']:
+            if factor['life_ob'][0]<=0:
+                win()
+        else:
+            pass #final win
+        
         if event.type == KEYDOWN: 
             if event.key == K_RETURN:
                 ploting(ui.change_plot)                   #to plot
             
             if event.key == K_v:
                 ploting(ui.reward)
-                factor['fight'] == 2
+                status['fight'] = 2
             #do reward
     
             if event.key == K_f:           
@@ -91,11 +101,7 @@ while True:
                 #if event.key == K_b:
                 #   ui.fight(status['main'])
                 #   status['subchoice']=0
-                if factor['life']<=0:
-                    lose()
-                if factor['life_ob'][0]<=0:
-                    win()
-                
+                                
                 if event.key == K_1 and status['subchoice']==0:
                     ui.choice_event(status['reward'])
                     status['subchoice']=1
