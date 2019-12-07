@@ -25,11 +25,14 @@ ui.word('Welcome to CK',(150,255,0),0.5)
 ui.word('press Enter to continue')
 pg.display.update()
 
-ui.change_plot(1)   #?
+#ui.change_plot(1)   #?
 
+def stop():
+    status['fight']=0
+    status['main']=-1
 def ploting(f): 
     status['change']=f(status['main'])
-    screen.blit(background,(0,0))
+    #screen.blit(background,(0,0))
     #pg.display.update()            need to be solve
     if status['change']:
         status['main']+=1
@@ -46,8 +49,7 @@ def lose():
     lose=pg.image.load('lose.gif').convert()
     screen.blit(lose,(0,0))
     ui.word('you lose. please quit and try again',(255,0,0),0.5)
-    status['fight']=0
-    status['main']=-1
+    stop()
     pg.display.update()
 def win():
     win=pg.image.load('win.gif').convert()
@@ -105,7 +107,7 @@ while True:
                 #   status['subchoice']=0
                                 
                 if event.key == K_1 and status['subchoice']==0:
-                    ui.choice_event(status['reward'])
+                    ui.choice_event(status['main'])
                     status['subchoice']=1
                 if event.key == K_2 and status['subchoice']==0:
                     ui.choice_battle(status['reward'])
@@ -115,9 +117,16 @@ while True:
                     status['subchoice']=3
             
                 if status['subchoice'] == 1:      #act(need discusion)
-                    #if
-                    print(1)
-                                    
+                    if event.key == K_q:
+                        if status['main'] == 1:
+                            ui.feed(1)
+                            stop()
+
+                    if event.key == K_w:
+                        if status['main'] == 1:
+                            ui.capture()
+                            stop()
+                                                       
                 if status['subchoice'] == 2:      #attack(function not complete)
                     if event.key == K_q:
                         using(logic.hit)
