@@ -45,13 +45,14 @@ def using(f):
 def lose():
     lose=pg.image.load('lose.gif').convert()
     screen.blit(lose,(0,0))
+    ui.word('you lose. please quit and try again',(255,0,0),0.5)
     status['fight']=0
     status['main']=-1
     pg.display.update()
 def win():
     win=pg.image.load('win.gif').convert()
     screen.blit(win,(0,0))
-    ui.word('you beat the thief and get something',(150,150,50),0.5)
+    ui.word('you win the battle and get something',(150,150,0),0.5)
     ui.word('press v to choose item')
     #screen.blit(plot.plot,(plot.x,plot.y/2))
     #screen.blit(express.plot,(express.x,express.y))
@@ -79,6 +80,7 @@ while True:
         
         if factor['life']<=0:
             lose()
+        
         if factor['life_ob']:
             if factor['life_ob'][0]<=0:
                 win()
