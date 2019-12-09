@@ -72,7 +72,7 @@ def reward(state):
         i+=1
     status['main']+=1
     status['fight']=0
-    #print(status['main'])
+    print(status['main'])
     return i                        
                   
 while True:
