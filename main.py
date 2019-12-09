@@ -119,7 +119,7 @@ while True:
                 if status['subchoice'] == 1:      #act(need discusion)
                     if event.key == K_q:
                         if status['main'] == 1:
-                            ui.feed(1)
+                            ui.feed()
                             stop()
 
                     if event.key == K_w:

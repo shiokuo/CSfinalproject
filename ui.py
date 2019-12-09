@@ -167,23 +167,25 @@ def choice_item(status):
         y=((480-plot_1.get_height()))/3
         screen.blit(plot_1,(x,y))
         pygame.display.update()
-def feed(status):
+def feed():
     '''fail'''    
     my_font = pygame.font.SysFont("arial", 50)
     plot_1=my_font.render('the thief bite you and ran away',999,(255,255,0))
     x=((640-plot_1.get_width()))/2
     y=((480-plot_1.get_height()))/2
+    screen.blit(background,(0,0))
     screen.blit(plot_1,(x,y))
     pygame.display.update()    
-def capture(status):
+def capture():
     '''fail'''    
     my_font = pygame.font.SysFont("arial", 50)
     plot_1=my_font.render('it ran away lol',999,(255,255,0))
     x=((640-plot_1.get_width()))/2
     y=((480-plot_1.get_height()))/2
+    screen.blit(background,(0,0))
     screen.blit(plot_1,(x,y))
     pygame.display.update()
-def clean(status): 
+def clean(): 
     '''blood up up =)'''   
     my_font = pygame.font.SysFont("arial", 50)
     plot_1=my_font.render('you are a good student',999,(255,255,0))
@@ -191,7 +193,7 @@ def clean(status):
     y=((480-plot_1.get_height()))/2
     screen.blit(plot_1,(x,y))
     pygame.display.update()
-def dance(status):
+def dance():
     '''his attack become more cruel'''    
     my_font = pygame.font.SysFont("arial", 50)
     plot_1=my_font.render('now he is mad at you',999,(255,255,0))
@@ -199,7 +201,7 @@ def dance(status):
     y=((480-plot_1.get_height()))/2
     screen.blit(plot_1,(x,y))
     pygame.display.update()
-def mind_map(status):
+def mind_map():
     '''blood up '''    
     my_font = pygame.font.SysFont("arial", 50)
     plot_1=my_font.render('well done',999,(255,255,0))
@@ -207,7 +209,7 @@ def mind_map(status):
     y=((480-plot_1.get_height()))/2
     screen.blit(plot_1,(x,y))
     pygame.display.update()
-def hide(status):
+def hide():
     '''nothing happen'''    
     my_font = pygame.font.SysFont("arial", 50)
     plot_1=my_font.render('at least you know how to hide from\nthe pressure',999,(255,255,0))
