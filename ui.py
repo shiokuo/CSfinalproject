@@ -17,6 +17,8 @@ def change_plot (status):
         y=((480-plot_1.get_height()))/2
         screen.blit(background,(0,0))
         screen.blit(plot_1,(x,y))
+        f=my_font.render('press f to continue',999,(255,0,0))
+        screen.blit(f,(x,400))
         pygame.display.update()
         return 1
     else:
@@ -28,6 +30,8 @@ def change_plot (status):
         y=((480-plot_1.get_height()))/2
         screen.blit(background,(0,0))
         screen.blit(plot_1,(x,y))
+        f=my_font.render('press f to continue',999,(255,0,0))
+        screen.blit(f,(x,400))
         pygame.display.update()
         return 1
     else:
@@ -39,6 +43,8 @@ def change_plot (status):
         y=((480-plot_1.get_height()))/2
         screen.blit(background,(0,0))
         screen.blit(plot_1,(x,y))
+        f=my_font.render('press f to continue',999,(255,0,0))
+        screen.blit(f,(x,400))
         pygame.display.update()
         return 1
     else:
@@ -46,34 +52,46 @@ def change_plot (status):
 def fight(status):
     #width, height = 640, 480                      
     #screen = pygame.display.set_mode((width, height)) 
-    fight=pygame.image.load('FIGHT.PNG').convert()
-    act=pygame.image.load('ACT.PNG').convert()
-    tool=pygame.image.load('TOOL.PNG').convert()
+    #fight=pygame.image.load('FIGHT.PNG').convert()
+    #act=pygame.image.load('ACT.PNG').convert()
+    #tool=pygame.image.load('TOOL.PNG').convert()
     if status==1:
         #screen = pygame.Surface(screen.get_size())
         #screen = screen.convert()
         #screen.fill((255,255,255))
+        my_font = pygame.font.SysFont("arial", 50)
         enemy_1=pygame.image.load('stealerv2.png').convert()
+        screen.blit(background,(0,0))
         screen.blit(enemy_1,(0,0))
-        screen.blit(fight,(0,0))
-        screen.blit(act,(0,160))
-        screen.blit(tool,(0,320))
+        #screen.blit(fight,(0,0))
+        #screen.blit(act,(0,160))
+        #screen.blit(tool,(0,320))
+        f=my_font.render('1:event 2:skill 3:item',999,(255,0,0))
+        screen.blit(f,(0,420))
         pygame.display.update()
         return 1
     if status==5:
         enemy_2=pygame.image.load('OXO.png').convert()
+        screen.blit(background,(0,0))
         screen.blit(enemy_2,(0,0))
-        screen.blit(fight,(0,0))
-        screen.blit(act,(0,160))
-        screen.blit(tool,(0,320))
+        my_font = pygame.font.SysFont("arial", 50)
+        #screen.blit(fight,(0,0))
+        #screen.blit(act,(0,160))
+        #screen.blit(tool,(0,320))
+        f=my_font.render('1:event 2:skill 3:item',999,(255,0,0))
+        screen.blit(f,(0,420))
         pygame.display.update()
         return 1
     if status==9:
         enemy_3=pygame.image.load('chemistry.png').convert()
+        screen.blit(background,(0,0))
         screen.blit(enemy_3,(0,0))
-        screen.blit(fight,(0,0))
-        screen.blit(act,(0,160))
-        screen.blit(tool,(0,320))
+        my_font = pygame.font.SysFont("arial", 50)
+        #screen.blit(fight,(0,0))
+        #screen.blit(act,(0,160))
+        #screen.blit(tool,(0,320))
+        f=my_font.render('1:event 2:skill 3:item',999,(255,0,0))
+        screen.blit(f,(0,420))
         pygame.display.update()
         return 1
     else :
@@ -81,26 +99,26 @@ def fight(status):
 def choice_event(status):
     if status == 1:
         my_font = pygame.font.SysFont("arial", 45)
-        plot_1=my_font.render('(q)feed more food\n(w)capture it',999,(255,0,0))
-        x=2*((640-plot_1.get_width()))/3
-        y=((480-plot_1.get_height()))/3
-        screen.blit(plot_1,(x,y))
+        plot_1=my_font.render('(q)feed more food(w)capture it',999,(255,0,0))
+        #x=2*((640-plot_1.get_width()))/3
+        #y=((480-plot_1.get_height()))/3
+        screen.blit(plot_1,(0,370))
         pygame.display.update()
         return 1
     if status == 5:
         my_font = pygame.font.SysFont("arial", 45)
-        plot_1=my_font.render('(q)clean the floor\n(w)ask him to dance',999,(255,0,0))
-        x=2*((640-plot_1.get_width()))/3
-        y=((480-plot_1.get_height()))/3
-        screen.blit(plot_1,(x,y))
+        plot_1=my_font.render('(q)clean the floor(w)ask him to dance',999,(255,0,0))
+        #x=2*((640-plot_1.get_width()))/3
+        #y=((480-plot_1.get_height()))/3
+        screen.blit(plot_1,(0,370))
         pygame.display.update()
         return 1
     if status == 9:
         my_font = pygame.font.SysFont("arial", 45)
-        plot_1=my_font.render('(q)draw a mind map\n(w)hide in the trashcan',999,(255,0,0))
-        x=2*((640-plot_1.get_width()))/3
-        y=((480-plot_1.get_height()))/3
-        screen.blit(plot_1,(x,y))
+        plot_1=my_font.render('(q)draw a mind map(w)hide in the trashcan',999,(255,0,0))
+        #x=2*((640-plot_1.get_width()))/3
+        #y=((480-plot_1.get_height()))/3
+        screen.blit(plot_1,(0,370))
         pygame.display.update()
         return 1
     else:
