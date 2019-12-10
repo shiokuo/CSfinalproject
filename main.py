@@ -4,7 +4,7 @@ import pygame as pg
 from pygame.locals import *
 #from sys import exit
 
-factor={'atk':30,'life':100,'atk_ob':[10],'life_ob':[100],'atk_up':1,'atk_ob_up':1} # game factors(atk_ob & life_ob to be finished)
+factor={'atk':30,'life':100,'atk_ob':[10,20,150],'life_ob':[100,150,330],'atk_up':1,'atk_ob_up':1} # game factors(atk_ob & life_ob to be finished)
 status={'main':0,'change':0,'fight':0,'subchoice':0,'reward':[0,0],'skill':0}
 
 #identify status
@@ -43,7 +43,8 @@ def fight():
 def using(f):
     global factor
     factor,status['skill']=f(factor)
-    factor=logic.react(factor,status['skill'],status['main'])
+    if factor['life_ob'][0]>0:
+        factor=logic.react(factor,status['skill'],status['main'])
     fight()
 def lose():
     lose=pg.image.load('lose.gif').convert()
@@ -146,8 +147,9 @@ while True:
                 if event.key == K_c:
                     r_num=reward(3)
                     if r_num ==1:
-                        factor['atk']*=1.2
-                    #if r_num ==2:
+                        factor['atk']*=1.3
+                    if r_num ==2:
+                        factor['life']+=100
 
             
 

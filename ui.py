@@ -140,7 +140,7 @@ def choice_battle(status):
         pygame.display.update()
     if status[1]==1:
         my_font = pygame.font.SysFont("arial", 45)
-        plot_1=my_font.render('(q)attack\n(w)charging\n(e)weaken\n(r)heal',999,(255,255,0))
+        plot_1=my_font.render('(q)attack\n(w)charging\n(e)weaken\n(r)strong charge',999,(255,255,0))
         x=2*((640-plot_1.get_width()))/3
         y=((480-plot_1.get_height()))/3
         screen.blit(plot_1,(x,y))
@@ -186,7 +186,7 @@ def capture():
     screen.blit(plot_1,(x,y))
     pygame.display.update()
 def clean(): 
-    '''blood up up =)'''   
+    '''blood up up =)(use heal)'''   
     my_font = pygame.font.SysFont("arial", 50)
     plot_1=my_font.render('you are a good student',999,(255,255,0))
     x=((640-plot_1.get_width()))/2
@@ -202,7 +202,7 @@ def dance():
     screen.blit(plot_1,(x,y))
     pygame.display.update()
 def mind_map():
-    '''blood up '''    
+    '''blood up(use heal) '''    
     my_font = pygame.font.SysFont("arial", 50)
     plot_1=my_font.render('well done',999,(255,255,0))
     x=((640-plot_1.get_width()))/2
