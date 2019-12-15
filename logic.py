@@ -1,15 +1,9 @@
 import random
 count = 0
-def hit(factor,status):
+def hit(factor):
 	'''Define how the player attacks the monster.'''
-	if status == 1:
-		i = 0
-	if status == 5:
-		i = 1 
-	if status == 9:
-		i = 2
-	factor['life_ob'][i] -= factor['atk']*factor['atk_up']
-	print('Beat the opponent: "ah ah AARRRR..."\nLife points of opponent:%f' %(factor['life_ob'][i]))
+	factor['life_ob'][0] -= factor['atk']*factor['atk_up']
+	print('Beat the opponent: "ah ah AARRRR..."\nLife points of opponent:%f' %(factor['life_ob'][0]))
 	factor['atk_up']=1	
 	return factor
 
@@ -27,20 +21,20 @@ def react(factor,status):
 	
 	if status == 5:
 		if factor['atk_ob_up'] < .8 or factor['atk_ob_up'] > 1.2:
-			factor['life'] -= factor['atk_ob'][1]*factor['atk_ob_up']
+			factor['life'] -= factor['atk_ob'][0]*factor['atk_ob_up']
 			print('The opponent is attacking you... Be careful...\n"Ahhh"\nLife points of you:%f' %(factor['life']))
 		
-		elif factor['life_ob'][1] < 100:
+		elif factor['life_ob'][0] < 100:
 			random_index = random.randint(1,10)
 			if random_index >= 9:
-				factor['life'] -= factor['atk_ob'][1]*factor['atk_ob_up']
+				factor['life'] -= factor['atk_ob'][0]*factor['atk_ob_up']
 				print('The opponent is attacking you... Be careful...\n"Ahhh"\nLife points of you:%f' %(factor['life']))
 			elif 4 <= random_index <= 8:
 				factor['atk_up'] *= 0.8
 				print('Oh. You\'ll attack less powerfully next round.')
 			else:
-				factor['life_ob'][1] += 20
-				print('The opponent is healing!\nLife points of opponent:%f' %(factor['life_ob'][1]))
+				factor['life_ob'][0] += 20
+				print('The opponent is healing!\nLife points of opponent:%f' %(factor['life_ob'][0]))
 		
 		else:
 			random_index = random.randint(1,10)
@@ -51,7 +45,7 @@ def react(factor,status):
 				factor['atk_ob_up'] *= 1.2
 				print("Next round, you'll be attacked more fiercely.")
 			else:
-				factor['life'] -= factor['atk_ob'][1]*factor['atk_ob_up']
+				factor['life'] -= factor['atk_ob'][0]*factor['atk_ob_up']
 				print('The opponent is attacking you... Be careful...\n"Ahhh"\nLife points of you:%f' %(factor['life']))
 	
 	if status == 9:
@@ -59,10 +53,10 @@ def react(factor,status):
 			factor['atk_ob_up'] = 1
 			print('Reset the opponent\'s attacking factor.')
 		if count % 4 == 2:
-			factor['life_ob'][2] = .8
-			print('Whhhaaat? Something seems to be wrong.\nLife points of opponent:%f' %(factor['life_ob'][2]))
+			factor['life_ob'][0] = .8
+			print('Whhhaaat? Something seems to be wrong.\nLife points of opponent:%f' %(factor['life_ob'][0]))
 		if count % 4 == 3:
-			factor['life'] -= factor['atk_ob'][2] * factor['atk_ob_up']
+			factor['life'] -= factor['atk_ob'][0] * factor['atk_ob_up']
 			print('The opponent is attacking you... Be careful...\n"Ahhh"\nLife points of you:%f' %(factor['life']))
 		count += 1
 	return factor
