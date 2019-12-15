@@ -162,7 +162,7 @@ def choice_item(status):
         pygame.display.update()
     if status[1]==2:
         my_font = pygame.font.SysFont("arial", 45)
-        plot_1=my_font.render('doll(w)',999,(255,0,0))
+        plot_1=my_font.render('stone statue(w)',999,(255,0,0))
         x=2*((640-plot_1.get_width()))/3
         y=((480-plot_1.get_height()))/3
         screen.blit(plot_1,(x,y))
@@ -229,7 +229,7 @@ def reward(status):
         return 1
     if status==6:
         my_font = pygame.font.SysFont("arial", 45)
-        plot_1=my_font.render('choose your reward\n(z)heal\n(x)doll\n(c)shield',999,(255,0,0))
+        plot_1=my_font.render('choose your reward\n(z)strong charge\n(x)stone statue\n(c)shield',999,(255,0,0))
         x=2*((640-plot_1.get_width()))/3
         y=((480-plot_1.get_height()))/3
         screen.blit(background,(0,0))

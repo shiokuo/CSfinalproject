@@ -42,9 +42,9 @@ def fight():
     status['subchoice']=0
 def using(f):
     global factor
-    factor,status['skill']=f(factor)
+    factor=f(factor)
     if factor['life_ob'][0]>0:
-        factor=logic.react(factor,status['skill'],status['main'])
+        factor=logic.react(factor,status['main'])
     fight()
 def lose():
     lose=pg.image.load('lose.gif').convert()
@@ -122,22 +122,42 @@ while True:
                         if status['main'] == 1:
                             ui.feed()
                             stop()
-
+                        if status['main'] == 5:
+                            ui.clean()
+                            using(logic.heal)
+                            
+                        if status['main'] == 9:
+                            ui.mind_map()
+                            using(logic.heal)
+                            
                     if event.key == K_w:
                         if status['main'] == 1:
                             ui.capture()
                             stop()
+                        if status['main'] == 5:
+                            ui.dance()
+                            using(logic.irritate)
+                        if status['main'] == 9:
+                            ui.hide()
+                            factor=logic.react(factor,status['main'])
+                            fight()
                                                        
                 if status['subchoice'] == 2:      #attack(function not complete)
                     if event.key == K_q:
                         using(logic.hit)
                     if event.key == K_w:
                         using(logic.charge)
-                    #if event.key == K_e and status['reward'][0]==1:
-                    #if event.key == K_r and status['reward'][1]==1:    
-                #if status['subchoice']==3:
-                #    if event.key == K_q and status['reward'][0]==2:
-                #    if event.key == K_w and status['reward'][1]==2:
+                    if event.key == K_e and status['reward'][0]==1:
+                        using(logic.weak)
+                    if event.key == K_r and status['reward'][1]==1:
+                        using(logic.strong_charge)    
+                if status['subchoice']==3:
+                    if event.key == K_q and status['reward'][0]==2:
+                        using(logic.breakfast)
+                        status['reward'][0]=-1
+                    if event.key == K_w and status['reward'][1]==2:
+                        using(logic.doll)
+                        status['reward'][1]=-1
 
             if status['fight'] == 2:
                 if event.key == K_z:
