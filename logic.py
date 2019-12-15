@@ -9,7 +9,7 @@ def hit(factor):
 def charge(factor):
 	'''You can attack 0.2 more powerfully the next round.'''
 	factor['atk_up']*=1.2 #to be modified
-	print("Next round, you'll attack the monster 0.2 more powerfully than you will originally.")
+	print("Next round, you'll attack the monster more powerfully.")
 	return factor
 
 def react(factor,status): 
@@ -37,7 +37,17 @@ def heal(factor):
 
 def strong_charge(factor):
 	factor['atk_up'] *= 2
-	factor['life'] *= 2
+	factor['life'] *= 0.5
+	print("Next round, you will attack the monster more powerfully significantly.\nHowever, you are going to die if you don't have enough life point.")
+	return factor
+
+def breakfast(factor):
+	factor['atk_up'] *= 3.6
+	print('To begin a nice day, have your breakfast!\nSee, you are so energetic now that you can almost defeat the opponent!')
+	return factor
+
+def doll(factor):
+	factor['atk_ob_up'] = 0
 	print('')
 	return factor
 
@@ -47,12 +57,5 @@ def (factor):
 
 def (factor):
 	print('')
-	return factor
-
-def (factor):
-	print('')
-	return factor
-
-def (factor):
-	print('')
+	
 	return factor
