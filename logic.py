@@ -14,5 +14,11 @@ def react(factor,status):
 		print('The monster is attacking you... Be careful...\n"Ahhh"')
 	return factor
 def irritate(factor):
-	
+
+def weak(factor):
+
+def heal(factor):
+
+def strong_charge(factor):
+
 
