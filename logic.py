@@ -1,22 +1,47 @@
+import random
 count = 0
 def hit(factor):
 	'''Define how the player attacks the monster.'''
 	factor['life_ob'][0] -= factor['atk']*factor['atk_up']
-	print('Beat the monster: "ahah ahhhh..." The monster loses %f points of life.'% (factor['atk'] * factor['atk_up']))
+	print('Beat the opponent: "ahah ahhhh..." It loses %f points of life.'% (factor['atk'] * factor['atk_up']))
 	factor['atk_up']=1	
 	return factor
 
 def charge(factor):
 	'''You can attack 0.2 more powerfully the next round.'''
 	factor['atk_up']*=1.2 #to be modified
-	print("Next round, you'll attack the monster more powerfully.")
+	print("Next round, you'll attack the opponent more powerfully.")
 	return factor
 
 def react(factor,status): 
 	'''Define how the monster attacks the player.'''
 	if status == 1:
 		factor['life'] -= factor['atk_ob'][0]*factor['atk_ob_up']
-		print('The monster is attacking you... Be careful...\n"Ahhh"')
+		print('The opponent is attacking you... Be careful...\n"Ahhh"')
+	if status == 5:
+		if factor['atk_ob_up'] < .8 or factor['atk_ob_up'] > 1.2:
+			factor['life'] -= factor['atk_ob'][1]*factor['atk_ob_up']
+			print('The opponent is attacking you... Be careful...\n"Ahhh"')
+		elif factor['life_ob'][1] < 100:
+			random_index = random.randint(1,10)
+			if random_index >= 9:
+				factor['life'] -= factor['atk_ob'][1]*factor['atk_ob_up']
+				print('The opponent is attacking you... Be careful...\n"Ahhh"')
+			if 4 <= random_index <= 8:
+				
+		else:
+
+	if status == 9:
+		if count % 4 == (0 or 1):
+			factor['atk_ob_up'] = 1
+			print('Reset the opponent\'s attacking factor.')
+		if count % 4 == 2:
+			factor['life_ob'][2] = .8
+			print('Whhhaaat? Something seems to be wrong.')
+		if count % 4 == 3:
+			factor['life'] -= factor['atk_ob'][2] * factor['atk_ob_up']
+			print('The opponent is attacking you... Be careful...\n"Ahhh"')
+		count += 1
 	return factor
 
 def irritate(factor):
@@ -48,14 +73,5 @@ def breakfast(factor):
 
 def doll(factor):
 	factor['atk_ob_up'] = 0
-	print('')
-	return factor
-
-def (factor):
-	print('')
-	return factor
-
-def (factor):
-	print('')
-	
+	print('Well... The opponent die.')
 	return factor
