@@ -3,17 +3,27 @@ import logic
 import pygame as pg 
 from pygame.locals import *
 #from sys import exit
-
-factor={'atk':30,'life':100,'atk_ob':[10,20,150],'life_ob':[100,150,330],'atk_up':1,'atk_ob_up':1} # game factors(atk_ob & life_ob to be finished)
+factor={'atk_ob':[10,20,150],'life_ob':[100,150,330]} # game factors(atk_ob & life_ob to be finished)
 status={'main':0,'change':0,'fight':0,'subchoice':0,'reward':[0,0],'skill':0}
-
 #identify status
 #whether keyin for change plot work
 #in fight:1 ; reward:2 ; else:0
 #choicing:0 ; event:1 ; fight:2 ; item:3 
-#nothing:0 ; skill:1 ; item:2 ; item been used or factor change:3
+#nothing:0 ; skill:1 ; item:2 ; factor change:3 ; item been used:-1
+def setting():
+    factor['atk']=30
+    factor['life']=100
+    factor['atk_up']=1
+    factor['atk_ob_up']=1
+    if status['reward'][0]==3:
+        factor['atk']*=1.3
+    if status['reward'][1]==3:
+        factor['life']+=100
 
 
+
+
+setting()
 pg.init()
 screen = pg.display.set_mode((640,480),0,32)        #set window
 pg.display.set_caption('RPG(project no.15)')        #set window title
@@ -55,7 +65,7 @@ def lose():
 def win():
     win=pg.image.load('win.gif').convert()
     screen.blit(win,(0,0))
-    ui.word('you win the battle and get something',(150,150,0),0.5)
+    ui.word('you win the battle and get something',(150,150,150),0.5)
     ui.word('press v to choose item')
     #screen.blit(plot.plot,(plot.x,plot.y/2))
     #screen.blit(express.plot,(express.x,express.y))
@@ -65,15 +75,19 @@ def win():
     status['main']+=1
     pg.display.update()
 def reward(state):
+    global status
     i=0
     while i<len(status['reward']):
         if status['reward'][i] == 0:
-            status[i] = state
+            status['reward'][i] = state
             break
         i+=1
     status['main']+=1
     status['fight']=0
-    print(status['main'])
+    setting()
+    ui.word('press enter to continue')
+    pg.display.update()
+    print(status['reward'])
     return i                        
                   
 while True:
@@ -165,11 +179,8 @@ while True:
                 if event.key == K_x:
                     reward(2)
                 if event.key == K_c:
-                    r_num=reward(3)
-                    if r_num ==1:
-                        factor['atk']*=1.3
-                    if r_num ==2:
-                        factor['life']+=100
+                    reward(3)
+                    
 
             
 

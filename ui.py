@@ -21,8 +21,7 @@ def change_plot (status):
         screen.blit(f,(x,400))
         pygame.display.update()
         return 1
-    else:
-        return 0
+    
     if status==4:      #OXO
         my_font = pygame.font.SysFont("arial", 50)
         plot_1=my_font.render('a man who taught Earth Science block your way',999,(255,0,0))
@@ -34,8 +33,7 @@ def change_plot (status):
         screen.blit(f,(x,400))
         pygame.display.update()
         return 1
-    else:
-        return 0
+    
     if status==8:      #tanya
         my_font = pygame.font.SysFont("arial", 50)
         plot_1=my_font.render('a chemistry teacher stand in front of you',999,(255,0,0))
@@ -47,8 +45,7 @@ def change_plot (status):
         screen.blit(f,(x,400))
         pygame.display.update()
         return 1
-    else:
-        return 0
+    
 def fight(status):
     #width, height = 640, 480                      
     #screen = pygame.display.set_mode((width, height)) 

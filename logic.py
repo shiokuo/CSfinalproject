@@ -49,11 +49,12 @@ def react(factor,status):
 				print('The opponent is attacking you... Be careful...\n"Ahhh"\nLife points of you:%f' %(factor['life']))
 	
 	if status == 9:
+		global count
 		if count % 4 == (0 or 1):
 			factor['atk_ob_up'] = 1
 			print('Reset the opponent\'s attacking factor.')
 		if count % 4 == 2:
-			factor['life_ob'][0] = .8
+			factor['life_ob'][0] *= .8
 			print('Whhhaaat? Something seems to be wrong.\nLife points of opponent:%f' %(factor['life_ob'][0]))
 		if count % 4 == 3:
 			factor['life'] -= factor['atk_ob'][0] * factor['atk_ob_up']
