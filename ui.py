@@ -57,8 +57,7 @@ def fight(status):
         #screen = screen.convert()
         #screen.fill((255,255,255))
         my_font = pygame.font.SysFont('Comic Sans MS', 50)
-        enemy_1=pygame.image.load('stealerv2.png').convert()
-        screen.blit(background,(0,0))
+        enemy_1=pygame.image.load('stealerv3.png').convert()
         screen.blit(enemy_1,(0,0))
         #screen.blit(fight,(0,0))
         #screen.blit(act,(0,160))
@@ -68,8 +67,7 @@ def fight(status):
         pygame.display.update()
         return 1
     if status==5:
-        enemy_2=pygame.image.load('OXO.png').convert()
-        screen.blit(background,(0,0))
+        enemy_2=pygame.image.load('OXOv2.png').convert()
         screen.blit(enemy_2,(0,0))
         my_font = pygame.font.SysFont('Comic Sans MS', 50)
         #screen.blit(fight,(0,0))
@@ -80,8 +78,7 @@ def fight(status):
         pygame.display.update()
         return 1
     if status==9:
-        enemy_3=pygame.image.load('chemistry.png').convert()
-        screen.blit(background,(0,0))
+        enemy_3=pygame.image.load('chemistryv2.png').convert()
         screen.blit(enemy_3,(0,0))
         my_font = pygame.font.SysFont('Comic Sans MS', 50)
         #screen.blit(fight,(0,0))
