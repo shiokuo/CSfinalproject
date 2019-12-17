@@ -12,7 +12,7 @@ def word(string,color=(255,0,0),coef=1,size=50):
 def change_plot (status):
     if status==0:      #breakfaststealer
         my_font = pygame.font.SysFont("arial", 50)
-        plot_1=my_font.render('you found your breakfast is stolen',999,(255,0,0))
+        plot_1=my_font.render('In a wonderful morning in CK, you\'re going to enjoy your meal, only to find your breakfast be stolen!',999,(255,0,0))
         x=((640-plot_1.get_width()))/2
         y=((480-plot_1.get_height()))/2
         screen.blit(background,(0,0))
@@ -24,7 +24,7 @@ def change_plot (status):
     
     if status==4:      #OXO
         my_font = pygame.font.SysFont("arial", 35)
-        plot_1=my_font.render('a man who taught Earth Science block your way',999,(255,0,0))
+        plot_1=my_font.render('Now, a man who teaches Earth Science blocks your way. What would you do?',999,(255,0,0))
         x=((640-plot_1.get_width()))/2
         y=((480-plot_1.get_height()))/2
         screen.blit(background,(0,0))
@@ -36,7 +36,7 @@ def change_plot (status):
     
     if status==8:      #tanya
         my_font = pygame.font.SysFont("arial", 35)
-        plot_1=my_font.render('a chemistry teacher stand in front of you',999,(255,0,0))
+        plot_1=my_font.render('A chemistry teacher stands in front of you.',999,(255,0,0))
         x=((640-plot_1.get_width()))/2
         y=((480-plot_1.get_height()))/2
         screen.blit(background,(0,0))
@@ -112,7 +112,7 @@ def choice_event(status):
         return 1
     if status == 9:
         my_font = pygame.font.SysFont("arial", 45)
-        plot_1=my_font.render('(q)draw a mind map(w)hide in the trashcan',999,(255,0,0))
+        plot_1=my_font.render('(q)draw a mind map(w)hide it in the trashcan',999,(255,0,0))
         #x=2*((640-plot_1.get_width()))/3
         #y=((480-plot_1.get_height()))/3
         screen.blit(plot_1,(0,370))
@@ -130,14 +130,14 @@ def choice_battle(status):
         pygame.display.update()
     if status[0]==1:
         my_font = pygame.font.SysFont("arial", 35)
-        plot_1=my_font.render('(q)attack(w)charging(e)weaken',999,(255,255,0))
+        plot_1=my_font.render('(q)attack(w)charge(e)weaken',999,(255,255,0))
         #x=2*((640-plot_1.get_width()))/3
         #y=((480-plot_1.get_height()))/3
         screen.blit(plot_1,(0,370))
         pygame.display.update()
     if status[1]==1:
         my_font = pygame.font.SysFont("arial", 30)
-        plot_1=my_font.render('(q)attack(w)charging(e)weaken(r)strong charge',999,(255,255,0))
+        plot_1=my_font.render('(q)attack(w)charge(e)weaken(r)strong charge',999,(255,255,0))
         #x=2*((640-plot_1.get_width()))/3
         #y=((480-plot_1.get_height()))/3
         screen.blit(plot_1,(0,370))
@@ -167,7 +167,7 @@ def choice_item(status):
 def feed():
     '''fail'''    
     my_font = pygame.font.SysFont("arial", 50)
-    plot_1=my_font.render('the thief bite you and ran away',999,(255,255,0))
+    plot_1=my_font.render('The thief bites you and runs away.',999,(255,255,0))
     x=((640-plot_1.get_width()))/2
     y=((480-plot_1.get_height()))/2
     screen.blit(background,(0,0))
@@ -176,7 +176,7 @@ def feed():
 def capture():
     '''fail'''    
     my_font = pygame.font.SysFont("arial", 50)
-    plot_1=my_font.render('it ran away lol',999,(255,255,0))
+    plot_1=my_font.render('It ran away. lol',999,(255,255,0))
     x=((640-plot_1.get_width()))/2
     y=((480-plot_1.get_height()))/2
     screen.blit(background,(0,0))
@@ -185,7 +185,7 @@ def capture():
 def clean(): 
     '''blood up up =)(use heal)'''   
     my_font = pygame.font.SysFont("arial", 50)
-    plot_1=my_font.render('you are a good student',999,(255,255,0))
+    plot_1=my_font.render('Bro, you are a good student.',999,(255,255,0))
     x=((640-plot_1.get_width()))/2
     y=((480-plot_1.get_height()))/2
     screen.blit(plot_1,(x,y))
@@ -193,7 +193,7 @@ def clean():
 def dance():
     '''his attack become more cruel'''    
     my_font = pygame.font.SysFont("arial", 50)
-    plot_1=my_font.render('now he is mad at you',999,(255,255,0))
+    plot_1=my_font.render('Now he is flying into a rage.',999,(255,255,0))
     x=((640-plot_1.get_width()))/2
     y=((480-plot_1.get_height()))/2
     screen.blit(plot_1,(x,y))
@@ -201,7 +201,7 @@ def dance():
 def mind_map():
     '''blood up(use heal) '''    
     my_font = pygame.font.SysFont("arial", 50)
-    plot_1=my_font.render('well done',999,(255,255,0))
+    plot_1=my_font.render('Well done.',999,(255,255,0))
     x=((640-plot_1.get_width()))/2
     y=((480-plot_1.get_height()))/2
     screen.blit(plot_1,(x,y))
@@ -209,7 +209,7 @@ def mind_map():
 def hide():
     '''nothing happen'''    
     my_font = pygame.font.SysFont("arial", 50)
-    plot_1=my_font.render('at least you know how to hide from\nthe pressure',999,(255,255,0))
+    plot_1=my_font.render('At least you know how to hide from\nthe pressure.',999,(255,255,0))
     x=((640-plot_1.get_width()))/2
     y=((480-plot_1.get_height()))/2
     screen.blit(plot_1,(x,y))
