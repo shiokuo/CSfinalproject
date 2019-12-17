@@ -217,7 +217,7 @@ def hide():
 def reward(status):
     if status==2:
         my_font = pygame.font.SysFont("arial", 25)
-        plot_1=my_font.render('choose your reward(z)weaken(a)a new breakfast(c)a sword',999,(255,0,0))
+        plot_1=my_font.render('choose your reward(z)weaken(x)a new breakfast(c)a sword',999,(255,0,0))
         #x=2*((640-plot_1.get_width()))/3
         #y=((480-plot_1.get_height()))/3
         screen.blit(background,(0,0))
