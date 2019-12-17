@@ -31,7 +31,7 @@ pg.display.set_caption('RPG(project no.15)')        #set window title
 background=pg.image.load('background.gif').convert()
 screen.blit(background,(0,0))
 
-ui.word('Welcome to CK',(150,255,0),0.5)
+ui.word('Welcome to CK!',(150,255,0),0.5)
 ui.word('press Enter to continue')
 pg.display.update()
 
@@ -59,13 +59,13 @@ def using(f):
 def lose():
     lose=pg.image.load('lose.gif').convert()
     screen.blit(lose,(0,0))
-    ui.word('you lose. please quit and try again',(255,0,0),0.5)
+    ui.word('You lose. Please quit and try again.',(255,0,0),0.5)
     stop()
     pg.display.update()
 def win():
     win=pg.image.load('win.gif').convert()
     screen.blit(win,(0,0))
-    ui.word('you win the battle and get something',(150,150,150),0.5)
+    ui.word('You win the battle and get something.',(150,150,150),0.5)
     ui.word('press v to choose item')
     #screen.blit(plot.plot,(plot.x,plot.y/2))
     #screen.blit(express.plot,(express.x,express.y))
