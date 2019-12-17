@@ -32,7 +32,7 @@ background=pg.image.load('background.gif').convert()
 screen.blit(background,(0,0))
 
 ui.word('Welcome to CK!',(150,255,0),0.5)
-ui.word('press Enter to continue')
+ui.word('press Enter to continue',color=(255,69,2))
 pg.display.update()
 
 #ui.change_plot(1)   #?
@@ -65,7 +65,7 @@ def lose():
 def win():
     win=pg.image.load('win.gif').convert()
     screen.blit(win,(0,0))
-    ui.word('You win the battle and get something.',(150,150,150),0.5)
+    ui.word('You win the battle and get something.',(248,248,255),0.5,size=30)
     ui.word('press v to choose item')
     #screen.blit(plot.plot,(plot.x,plot.y/2))
     #screen.blit(express.plot,(express.x,express.y))
@@ -85,7 +85,7 @@ def reward(state):
     status['main']+=1
     status['fight']=0
     setting()
-    ui.word('press enter to continue')
+    ui.word('press enter to continue',color=(255,69,2))
     pg.display.update()
     print(status['reward'])
     return i                        
