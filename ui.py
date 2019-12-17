@@ -11,8 +11,8 @@ def word(string,color=(255,0,0),coef=1,size=50):
 
 def change_plot (status):
     if status==0:      #breakfaststealer
-        my_font = pygame.font.SysFont("arial", 50)
-        plot_1=my_font.render('In a wonderful morning in CK, you\'re going to enjoy your meal, only to find your breakfast be stolen!',999,(255,0,0))
+        my_font = pygame.font.SysFont("arial", 30)
+        plot_1=my_font.render('In a wonderful morning in CK, you\'re going to enjoy your meal,\nonly to find your breakfast be stolen!',999,(255,0,0))
         x=((640-plot_1.get_width()))/2
         y=((480-plot_1.get_height()))/2
         screen.blit(background,(0,0))
@@ -23,8 +23,8 @@ def change_plot (status):
         return 1
     
     if status==4:      #OXO
-        my_font = pygame.font.SysFont("arial", 35)
-        plot_1=my_font.render('Now, a man who teaches Earth Science blocks your way. What would you do?',999,(255,0,0))
+        my_font = pygame.font.SysFont("arial", 25)
+        plot_1=my_font.render('Now, a man who teaches Earth Science blocks your way.\nWhat would you do?',999,(255,0,0))
         x=((640-plot_1.get_width()))/2
         y=((480-plot_1.get_height()))/2
         screen.blit(background,(0,0))
