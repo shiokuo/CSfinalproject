@@ -106,7 +106,7 @@ def choice_event(status):
         plot_1=my_font.render('(q)clean the floor(w)ask him to dance',999,(255,69,2))
         #x=2*((640-plot_1.get_width()))/3
         #y=((480-plot_1.get_height()))/3
-        screen.blit(plot_1,(0,350))
+        screen.blit(plot_1,(0,330))
         pygame.display.update()
         return 1
     if status == 9:
@@ -114,7 +114,7 @@ def choice_event(status):
         plot_1=my_font.render('(q)draw a mind map(w)hide it in the trashcan',999,(255,69,2))
         #x=2*((640-plot_1.get_width()))/3
         #y=((480-plot_1.get_height()))/3
-        screen.blit(plot_1,(0,340))
+        screen.blit(plot_1,(0,330))
         pygame.display.update()
         return 1
     else:
