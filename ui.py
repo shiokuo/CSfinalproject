@@ -18,8 +18,9 @@ def change_plot (status):
         y=((480-plot_1.get_height()))*0.4
         screen.blit(plot_1,(x,y))
         word('only to find it be stolen!',(0,199,140),0.6,22)
-        f=my_font.render('press f to continue',999,(210,105,30))
-        screen.blit(f,(x,400))
+        word('press f to continue',(210,105,30))
+        #f=my_font.render('press f to continue',999,(210,105,30))
+        #screen.blit(f,(x,400))
         pygame.display.update()
         return 1
     
@@ -31,8 +32,9 @@ def change_plot (status):
         y=((480-plot_1.get_height()))*0.4
         word('Earth Science blocks your way.',(0,199,140),0.6,23)
         screen.blit(plot_1,(x,y))
-        f=my_font.render('press f to continue',999,(210,105,30))
-        screen.blit(f,(0,400))
+        word('press f to continue',(210,105,30))
+        #f=my_font.render('press f to continue',999,(210,105,30))
+        #screen.blit(f,(0,400))
         pygame.display.update()
         return 1
     
@@ -43,8 +45,9 @@ def change_plot (status):
         y=((480-plot_1.get_height()))/2
         screen.blit(background,(0,0))
         screen.blit(plot_1,(x,y))
-        f=my_font.render('press f to continue',999,(210,105,30))
-        screen.blit(f,(0,400))
+        word('press f to continue',(210,105,30))
+        #f=my_font.render('press f to continue',999,(210,105,30))
+        #screen.blit(f,(0,400))
         pygame.display.update()
         return 1
     
@@ -94,11 +97,12 @@ def fight(status):
         return 0
 def choice_event(status):
     if status == 1:
-        my_font = pygame.font.SysFont('Comic Sans MS', 40)
+        my_font = pygame.font.SysFont('Comic Sans MS', 30)
         plot_1=my_font.render('(q)feed more food(w)capture it',999,(255,69,2))
         #x=2*((640-plot_1.get_width()))/3
         #y=((480-plot_1.get_height()))/3
         screen.blit(plot_1,(0,330))
+        word('F:back for other choices',(210,105,30),0.675,25)
         pygame.display.update()
         return 1
     if status == 5:
@@ -107,14 +111,16 @@ def choice_event(status):
         #x=2*((640-plot_1.get_width()))/3
         #y=((480-plot_1.get_height()))/3
         screen.blit(plot_1,(0,330))
+        word('F:back for other choices',(210,105,30),0.675,25)
         pygame.display.update()
         return 1
     if status == 9:
-        my_font = pygame.font.SysFont('Comic Sans MS', 25)
-        plot_1=my_font.render('(q)draw a mind map(w)hide it in the trashcan',999,(255,69,2))
+        my_font = pygame.font.SysFont('Comic Sans MS', 30)
+        plot_1=my_font.render('(q)draw a mind map(w)hide it in trashcan',999,(255,69,2))
         #x=2*((640-plot_1.get_width()))/3
         #y=((480-plot_1.get_height()))/3
         screen.blit(plot_1,(0,330))
+        word('F:back for other choices',(210,105,30),0.675,25)
         pygame.display.update()
         return 1
     else:
@@ -128,6 +134,7 @@ def choice_battle(status):
     plot_2=my_font.render('(w)power',999,(0,199,140))
     #y=((480-plot_1.get_height()))/3
     screen.blit(plot_2,(x,330))
+    word('F:back for other choices',(210,105,30),0.675,25)
     pygame.display.update()
     if status[0]==1:
         my_font = pygame.font.SysFont('Comic Sans MS', 30)
@@ -144,6 +151,7 @@ def choice_battle(status):
         screen.blit(plot_1,(3*x,330))
         pygame.display.update()
 def choice_item(status):
+    word('F:back for other choices',(210,105,30),0.675,25)
     if status[0]!=2 and status[1]!=2:
         my_font = pygame.font.SysFont('Comic Sans MS', 30)
         plot_1=my_font.render('nothing',999,(255,69,2))
@@ -171,6 +179,7 @@ def feed():
     plot_1=my_font.render('The thief bites you and runs away.',999,(0,199,140))
     x=((640-plot_1.get_width()))/2
     y=((480-plot_1.get_height()))/2
+    word('quit and try again')
     screen.blit(background,(0,0))
     screen.blit(plot_1,(x,y))
     pygame.display.update()    
@@ -180,6 +189,7 @@ def capture():
     plot_1=my_font.render('It ran away. lol',999,(0,199,140))
     x=((640-plot_1.get_width()))/2
     y=((480-plot_1.get_height()))/2
+    word('quit and try again')
     screen.blit(background,(0,0))
     screen.blit(plot_1,(x,y))
     pygame.display.update()
