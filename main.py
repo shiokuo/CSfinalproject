@@ -63,16 +63,25 @@ def lose():
     stop()
     pg.display.update()
 def win():
-    win=pg.image.load('win.gif').convert()
-    screen.blit(win,(0,0))
-    ui.word('You win the battle and get something.',(248,248,255),0.5,size=30)
-    ui.word('press v to choose item')
-    #screen.blit(plot.plot,(plot.x,plot.y/2))
-    #screen.blit(express.plot,(express.x,express.y))
     factor['life_ob'].pop(0)
     factor['atk_ob'].pop(0)
     status['fight']=0
     status['main']+=1
+    if factor['life_ob']:
+        win=pg.image.load('win.gif').convert()
+        screen.blit(win,(0,0))
+        ui.word('You win the battle and get something.',(248,248,255),0.5,size=30)
+        ui.word('press v to choose item')
+    else:
+        f_win=pg.image.load('f_win.gif').convert() #final win
+        screen.blit(f_win,(0,0))
+        ui.word('you successfully graduated',coef=0.4)
+        ui.word('and NTU is waiting for you',coef=0.6)
+        stop()
+        pg.display.update()
+    #screen.blit(plot.plot,(plot.x,plot.y/2))
+    #screen.blit(express.plot,(express.x,express.y))
+    
     pg.display.update()
 def reward(state):
     global status
@@ -85,6 +94,7 @@ def reward(state):
     status['main']+=1
     status['fight']=0
     setting()
+    screen.blit(background,(0,0))
     ui.word('press enter to continue',color=(255,69,2))
     pg.display.update()
     print(status['reward'])
@@ -101,8 +111,6 @@ while True:
         if factor['life_ob']:
             if factor['life_ob'][0]<=0:
                 win()
-        else:
-            pass #final win
         
         if event.type == KEYDOWN: 
             if event.key == K_RETURN:
