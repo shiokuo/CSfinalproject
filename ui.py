@@ -11,23 +11,25 @@ def word(string,color=(255,69,2),coef=1,size=40):
 
 def change_plot (status):
     if status==0:      #breakfaststealer
-        my_font = pygame.font.SysFont("Comic Sans MS", 22)
-        plot_1=my_font.render('You\'re going to enjoy your breakfast,only to find it be stolen!',999,(0,199,140))
-        x=((640-plot_1.get_width()))/2
-        y=((480-plot_1.get_height()))/2
         screen.blit(background,(0,0))
+        my_font = pygame.font.SysFont("Comic Sans MS", 22)
+        plot_1=my_font.render('You\'re going to enjoy your breakfast,',999,(0,199,140))
+        x=((640-plot_1.get_width()))/2
+        y=((480-plot_1.get_height()))*0.4
         screen.blit(plot_1,(x,y))
+        word('only to find it be stolen!',(0,199,140),0.6,22)
         f=my_font.render('press f to continue',999,(210,105,30))
         screen.blit(f,(x,400))
         pygame.display.update()
         return 1
     
     if status==4:      #OXO
-        my_font = pygame.font.SysFont("Comic Sans MS", 23)
-        plot_1=my_font.render('Now, a man who teaches Earth Science blocks your way.',999,(0,199,140))
-        x=((640-plot_1.get_width()))/2
-        y=((480-plot_1.get_height()))/2
         screen.blit(background,(0,0))
+        my_font = pygame.font.SysFont("Comic Sans MS", 23)
+        plot_1=my_font.render('Now, a man who teaches ',999,(0,199,140))
+        x=((640-plot_1.get_width()))/2
+        y=((480-plot_1.get_height()))*0.4
+        word('Earth Science blocks your way.',(0,199,140),0.6,23)
         screen.blit(plot_1,(x,y))
         f=my_font.render('press f to continue',999,(210,105,30))
         screen.blit(f,(0,400))
@@ -36,7 +38,7 @@ def change_plot (status):
     
     if status==8:      #tanya
         my_font = pygame.font.SysFont('Comic Sans MS', 30)
-        plot_1=my_font.render('A chemistry teacher stands in front of you.',999,(0,199,140))
+        plot_1=my_font.render('A ch?mistr? tex?b?ok stands in front of you.',999,(0,199,140))
         x=((640-plot_1.get_width()))/2
         y=((480-plot_1.get_height()))/2
         screen.blit(background,(0,0))
@@ -56,36 +58,36 @@ def fight(status):
         #screen = pygame.Surface(screen.get_size())
         #screen = screen.convert()
         #screen.fill((255,255,255))
-        my_font = pygame.font.SysFont('Comic Sans MS', 40)
+        my_font = pygame.font.SysFont('Comic Sans MS', 60)
         enemy_1=pygame.image.load('stealerv3.png').convert()
         screen.blit(enemy_1,(0,0))
         #screen.blit(fight,(0,0))
         #screen.blit(act,(0,160))
         #screen.blit(tool,(0,320))
         f=my_font.render('1:event 2:skill 3:item',999,(218,112,214))
-        screen.blit(f,(0,420))
+        screen.blit(f,(0,400))
         pygame.display.update()
         return 1
     if status==5:
         enemy_2=pygame.image.load('OXOv2.png').convert()
         screen.blit(enemy_2,(0,0))
-        my_font = pygame.font.SysFont('Comic Sans MS', 40)
+        my_font = pygame.font.SysFont('Comic Sans MS', 60)
         #screen.blit(fight,(0,0))
         #screen.blit(act,(0,160))
         #screen.blit(tool,(0,320))
         f=my_font.render('1:event 2:skill 3:item',999,(218,112,214))
-        screen.blit(f,(100,420))
+        screen.blit(f,(0,400))
         pygame.display.update()
         return 1
     if status==9:
         enemy_3=pygame.image.load('chemistryv2.png').convert()
         screen.blit(enemy_3,(0,0))
-        my_font = pygame.font.SysFont('Comic Sans MS', 40)
+        my_font = pygame.font.SysFont('Comic Sans MS', 60)
         #screen.blit(fight,(0,0))
         #screen.blit(act,(0,160))
         #screen.blit(tool,(0,320))
         f=my_font.render('1:event 2:skill 3:item',999,(218,112,214))
-        screen.blit(f,(100,420))
+        screen.blit(f,(0,400))
         pygame.display.update()
         return 1
     else :
@@ -96,7 +98,7 @@ def choice_event(status):
         plot_1=my_font.render('(q)feed more food(w)capture it',999,(255,69,2))
         #x=2*((640-plot_1.get_width()))/3
         #y=((480-plot_1.get_height()))/3
-        screen.blit(plot_1,(0,370))
+        screen.blit(plot_1,(0,330))
         pygame.display.update()
         return 1
     if status == 5:
@@ -104,7 +106,7 @@ def choice_event(status):
         plot_1=my_font.render('(q)clean the floor(w)ask him to dance',999,(255,69,2))
         #x=2*((640-plot_1.get_width()))/3
         #y=((480-plot_1.get_height()))/3
-        screen.blit(plot_1,(0,370))
+        screen.blit(plot_1,(0,350))
         pygame.display.update()
         return 1
     if status == 9:
@@ -112,54 +114,56 @@ def choice_event(status):
         plot_1=my_font.render('(q)draw a mind map(w)hide it in the trashcan',999,(255,69,2))
         #x=2*((640-plot_1.get_width()))/3
         #y=((480-plot_1.get_height()))/3
-        screen.blit(plot_1,(0,370))
+        screen.blit(plot_1,(0,340))
         pygame.display.update()
         return 1
     else:
         return 0
 def choice_battle(status):
-    if status[0]!=1 and status[1]!=1:
-        my_font = pygame.font.SysFont('Comic Sans MS', 40)
-        plot_1=my_font.render('(q)attack(w)charging',999,(0,199,140))
-        #x=2*((640-plot_1.get_width()))/3
-        #y=((480-plot_1.get_height()))/3
-        screen.blit(plot_1,(0,370))
-        pygame.display.update()
+    my_font = pygame.font.SysFont('Comic Sans MS', 30)
+    plot_1=my_font.render('(q)attack',999,(0,199,140))
+    x=((640-plot_1.get_width()))/4
+    #y=((480-plot_1.get_height()))/3
+    screen.blit(plot_1,(0,330))
+    plot_2=my_font.render('(w)power',999,(0,199,140))
+    #y=((480-plot_1.get_height()))/3
+    screen.blit(plot_2,(x,330))
+    pygame.display.update()
     if status[0]==1:
-        my_font = pygame.font.SysFont('Comic Sans MS', 35)
-        plot_1=my_font.render('(q)attack(w)charge(e)weaken',999,(0,199,140))
+        my_font = pygame.font.SysFont('Comic Sans MS', 30)
+        plot_1=my_font.render('(e)scare',999,(0,199,140))
         #x=2*((640-plot_1.get_width()))/3
         #y=((480-plot_1.get_height()))/3
-        screen.blit(plot_1,(0,370))
+        screen.blit(plot_1,(2*x+5,330))
         pygame.display.update()
     if status[1]==1:
         my_font = pygame.font.SysFont('Comic Sans MS', 30)
-        plot_1=my_font.render('(q)attack(w)charge(e)weaken(r)strong charge',999,(0,199,140))
+        plot_1=my_font.render('(r)burnup',999,(0,199,140))
         #x=2*((640-plot_1.get_width()))/3
         #y=((480-plot_1.get_height()))/3
-        screen.blit(plot_1,(0,370))
+        screen.blit(plot_1,(3*x,330))
         pygame.display.update()
 def choice_item(status):
     if status[0]!=2 and status[1]!=2:
-        my_font = pygame.font.SysFont('Comic Sans MS', 40)
+        my_font = pygame.font.SysFont('Comic Sans MS', 30)
         plot_1=my_font.render('nothing',999,(255,69,2))
         #x=2*((640-plot_1.get_width()))/3
         #y=((480-plot_1.get_height()))/3
-        screen.blit(plot_1,(0,370))
+        screen.blit(plot_1,(0,330))
         pygame.display.update()
     if status[0]==2:
-        my_font = pygame.font.SysFont('Comic Sans MS', 40)
+        my_font = pygame.font.SysFont('Comic Sans MS', 30)
         plot_1=my_font.render('breakfast(q)',999,(255,69,2))
         #x=2*((640-plot_1.get_width()))/3
         #y=((480-plot_1.get_height()))/3
-        screen.blit(plot_1,(0,370))
+        screen.blit(plot_1,(0,330))
         pygame.display.update()
     if status[1]==2:
-        my_font = pygame.font.SysFont('Comic Sans MS', 40)
+        my_font = pygame.font.SysFont('Comic Sans MS', 30)
         plot_1=my_font.render('stone statue(w)',999,(255,69,2))
         #x=2*((640-plot_1.get_width()))/3
         #y=((480-plot_1.get_height()))/3
-        screen.blit(plot_1,(0,370))
+        screen.blit(plot_1,(0,300))
         pygame.display.update()
 def feed():
     '''fail'''    
