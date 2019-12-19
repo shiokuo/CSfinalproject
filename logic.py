@@ -54,9 +54,13 @@ def react(factor,status):
 	
 	if status == 9:
 		global count
-		if count % 4 == 0 or count % 4 == 1:
-			factor['atk_ob_up'] = 1
-			print('\nThe opponent\'s will attack normally next time.')
+		if (count % 4 == 0 or count % 4 == 1):
+			if factor['atk_ob_up']>1:
+				factor['atk_ob_up'] = 1
+				print('\nThe opponent\'s will attack normally next time.')
+			else:
+				print('Nothing happens.')	 
+			
 		if count % 4 == 2:
 			factor['life_ob'][0] *= .7
 			print('\n??? Something seems to be wrong since the opponent loses some points.\nThe opponent\'s life points:%f' %(factor['life_ob'][0]))
