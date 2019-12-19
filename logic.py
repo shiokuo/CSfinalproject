@@ -80,7 +80,7 @@ def weak(factor):
 	return factor
 
 def heal(factor):
-	factor['life'] += 20
+	factor['life'] += 15
 	print('\nYou\'re healing... ... ...\nYour life points:%f' %(factor['life']) )
 	return factor
 
