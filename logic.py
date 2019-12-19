@@ -28,22 +28,22 @@ def react(factor,status):
 		
 		elif factor['life_ob'][0] < 100:
 			random_index = random.randint(1,10)
-			if random_index >= 8:
+			if random_index >= 7:
 				factor['life'] -= factor['atk_ob'][0]*factor['atk_ob_up']
 				print('\nThe opponent is attacking you... Be careful...\n"Ahhh"\nYour life points:%f' %(factor['life']))
 				factor['atk_ob_up'] = 1
-			elif 4 <= random_index <= 7:
+			elif 4 <= random_index <= 6:
 				factor['atk_up'] *= 0.7
 				print('\nOh. You\'ll attack less powerfully next round.')
 			else:
-				factor['life_ob'][0] += 10
+				factor['life_ob'][0] += 15
 				print('\nThe opponent is healing!\nThe opponent\'s life points:%f' %(factor['life_ob'][0]))
 		
 		else:
 			random_index = random.randint(1,10)
 			if random_index >= 9:
 				factor['atk_up'] *= 0.8
-				print('\nOh. You\'ll attack less powerfully next round.')
+				print('\nOh. You\'ll attack the opponent less powerfully next round.')
 			elif 4 <= random_index <= 8:
 				factor['atk_ob_up'] *= 1.2
 				print("\nNext round, you'll be attacked more fiercely.")
@@ -57,17 +57,20 @@ def react(factor,status):
 		if (count % 4 == 0 or count % 4 == 1):
 			if factor['atk_ob_up']>1:
 				factor['atk_ob_up'] = 1
-				print('\nThe opponent\'s will attack normally next time.')
+				print('\nThe opponent\'s will attack you normally next time.')
 			else:
-				print('Nothing happens.')	 
+				print('\nThe opponents is too lazy to hit you.')	 
 			
 		if count % 4 == 2:
-			factor['life_ob'][0] *= .7
+			factor['life_ob'][0] *= .8
 			print('\n??? Something seems to be wrong since the opponent loses some points.\nThe opponent\'s life points:%f' %(factor['life_ob'][0]))
-		if count % 4 == 3:
-			factor['life'] -= factor['atk_ob'][0] * factor['atk_ob_up']
-			print('\nThe opponent is attacking you... Be careful...\n"Ahhh"\nYour life points:%f' %(factor['life']))
-			factor['atk_ob_up'] = 1
+		if count % 4 == 3 
+			if factor['atk_ob_up'] != 0:
+				factor['life'] -= factor['atk_ob'][0] * factor['atk_ob_up']
+				print('\nThe opponent is attacking you... Be careful...\n"Ahhh"\nYour life points:%f' %(factor['life']))
+				factor['atk_ob_up'] = 1
+			else:
+				print('The opponent can\'t hit you.)
 		count += 1
 	return factor
 
