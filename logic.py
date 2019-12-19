@@ -70,7 +70,7 @@ def react(factor,status):
 				print('\nThe opponent is attacking you... Be careful...\n"Ahhh"\nYour life points:%f' %(factor['life']))
 				factor['atk_ob_up'] = 1
 			else:
-				print('The opponent can\'t hit you.)
+				print('The opponent can\'t hit you.')
 		count += 1
 	return factor
 

@@ -75,8 +75,8 @@ def win():
     else:
         f_win=pg.image.load('f_win.gif').convert() #final win
         screen.blit(f_win,(0,0))
-        ui.word('you successfully graduated',coef=0.4)
-        ui.word('and NTU is waiting for you',coef=0.6)
+        ui.word('Finally, you successfully graduated',coef=0.4)
+        ui.word('and NTU is waiting for you!',coef=0.6)
         stop()
         pg.display.update()
     #screen.blit(plot.plot,(plot.x,plot.y/2))
