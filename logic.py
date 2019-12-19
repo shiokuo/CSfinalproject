@@ -8,8 +8,8 @@ def hit(factor):
 	return factor
 
 def charge(factor):
-	'''You can attack 1.1 more powerfully the next round.'''
-	factor['atk_up'] *= 2.1
+	'''You can attack 1.2 more powerfully the next round.'''
+	factor['atk_up'] *= 2.2
 	print("\nNext round, you'll attack the opponent more powerfully.")
 	return factor
 
@@ -36,7 +36,7 @@ def react(factor,status):
 				factor['atk_up'] *= 0.7
 				print('\nOh. You\'ll attack less powerfully next round.')
 			else:
-				factor['life_ob'][0] += 20
+				factor['life_ob'][0] += 10
 				print('\nThe opponent is healing!\nThe opponent\'s life points:%f' %(factor['life_ob'][0]))
 		
 		else:
