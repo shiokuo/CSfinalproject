@@ -3,7 +3,7 @@ import logic
 import pygame as pg 
 from pygame.locals import *
 #from sys import exit
-factor={'atk_ob':[15,20,150],'life_ob':[100,150,330]} # game factors(atk_ob & life_ob to be finished)
+factor={'atk_ob':[20,25,150],'life_ob':[100,150,330]} # game factors(atk_ob & life_ob to be finished)
 status={'main':0,'change':0,'fight':0,'subchoice':0,'reward':[0,0],'skill':0}
 #identify status
 #whether keyin for change plot work
