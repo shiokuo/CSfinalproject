@@ -1,7 +1,7 @@
 import random
 count = 0
 def hit(factor):
-	'''Define how the player attacks the monster.'''
+	'''Define how the player attacks the opponent.'''
 	factor['life_ob'][0] -= factor['atk']*factor['atk_up']
 	print('\nBeat the opponent: "ah ah AARRRR..."\nThe opponent\'s life points:%f' %(factor['life_ob'][0]))
 	factor['atk_up']=1	
@@ -14,7 +14,7 @@ def charge(factor):
 	return factor
 
 def react(factor,status): 
-	'''Define how the monster attacks the player.'''
+	'''Define how the opponent attacks the player.'''
 	if status == 1:
 		factor['life'] -= factor['atk_ob'][0]*factor['atk_ob_up']
 		print('\nThe opponent is attacking you... Be careful...\n"Ahhh"\nYour life points:%f' %(factor['life']))
@@ -68,13 +68,13 @@ def react(factor,status):
 	return factor
 
 def irritate(factor):
-	'''The monster can attack 0.3 more powerfully.'''
+	'''The opponent can attack 0.3 more powerfully.'''
 	factor['atk_ob_up'] *= 1.3
-	print('\nThe monster is flying into a rage... Beware of the upcoming attack.')
+	print('\nThe opponent is flying into a rage... Beware of the upcoming attack.')
 	return factor
 
 def weak(factor):
-	'''The monster can attack 0.2 less powerfully.'''
+	'''The opponent can attack 0.2 less powerfully.'''
 	factor['atk_ob_up'] *= 0.8
 	print('\nYou will be attacked more mildly. Good news.')
 	return factor
@@ -87,11 +87,11 @@ def heal(factor):
 def strong_charge(factor):
 	factor['atk_up'] *= 3
 	factor['life'] *= 0.8
-	print("\nNext round, you will attack the monster more powerfully significantly.\nHowever, you also lose some life points for compensation.\nSo What's your points now?\nYour life points:%f" %(factor['life']))
+	print("\nNext round, you will attack the opponent more powerfully significantly.\nHowever, you also lose some life points for compensation.\nSo What's your points now?\nYour life points:%f" %(factor['life']))
 	return factor
 
 def breakfast(factor):
-	factor['atk_up'] *= 3.5
+	factor['atk_up'] *= 3.6
 	print('\nTo begin a nice day, have your breakfast!\nSee, you are so energetic now that you can almost defeat the opponent!')
 	return factor
 
