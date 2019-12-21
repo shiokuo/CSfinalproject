@@ -1,4 +1,4 @@
-import ui 
+import ui
 import logic
 import pygame as pg 
 from pygame.locals import *
@@ -36,7 +36,12 @@ ui.word('press Enter to continue',color=(255,69,2))
 pg.display.update()
 
 #ui.change_plot(1)   #?
-
+def keep_on():
+    while True:
+        for event in pg.event.get():
+            if event.type == KEYDOWN:
+                if event.key == K_g:
+                    return 
 def stop():
     status['fight']=0
     status['main']=-1
@@ -48,11 +53,12 @@ def ploting(f):
         status['main']+=1
         status['change']=0
 def fight():
-    status['fight']=ui.fight(status['main'])
+    status['fight']=ui.fight(status['main'],factor)
     status['subchoice']=0
 def using(f):
     global factor
     factor=f(factor)
+
     if factor['life_ob'][0]>0:
         factor=logic.react(factor,status['main'])
     fight()
@@ -97,7 +103,6 @@ def reward(state):
     screen.blit(background,(0,0))
     ui.word('press enter to continue',color=(255,69,2))
     pg.display.update()
-    print(status['reward'])
     return i                        
                   
 while True:
@@ -146,10 +151,12 @@ while True:
                             stop()
                         if status['main'] == 5:
                             ui.clean()
+                            keep_on()
                             using(logic.heal)
                             
                         if status['main'] == 9:
                             ui.mind_map()
+                            keep_on()
                             using(logic.heal)
                             
                     if event.key == K_w:
@@ -158,9 +165,11 @@ while True:
                             stop()
                         if status['main'] == 5:
                             ui.dance()
+                            keep_on()
                             using(logic.irritate)
                         if status['main'] == 9:
                             ui.hide()
+                            keep_on()
                             factor=logic.react(factor,status['main'])
                             fight()
                                                        
