@@ -98,7 +98,7 @@ def strong_charge(factor):
 	return factor
 
 def breakfast(factor):
-	factor['atk_up'] *= 3.6
+	factor['atk_up'] *= 4
 	print('\nTo begin a nice day, have your breakfast!\nSee, you are so energetic now that you can almost defeat the opponent!')
 	return factor
 
