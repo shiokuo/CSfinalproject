@@ -8,8 +8,8 @@ def hit(factor):
 	return factor
 
 def charge(factor):
-	'''You can attack 1.2 more powerfully the next round.'''
-	factor['atk_up'] *= 2.2
+	'''You can attack 0.8 more powerfully the next round.'''
+	factor['atk_up'] *= 1.8
 	print("\nNext round, you'll attack the opponent more powerfully.")
 	return factor
 
