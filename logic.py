@@ -8,8 +8,8 @@ def hit(factor):
 	return factor
 
 def charge(factor):
-	'''You can attack 1.2 more powerfully the next round.'''
-	factor['atk_up'] *= 2.2
+	'''You can attack 0.8 more powerfully the next round.'''
+	factor['atk_up'] *= 1.8
 	print("\nNext round, you'll attack the opponent more powerfully.")
 	return factor
 
@@ -98,7 +98,7 @@ def strong_charge(factor):
 	return factor
 
 def breakfast(factor):
-	factor['atk_up'] *= 3.6
+	factor['atk_up'] *= 4
 	print('\nTo begin a nice day, have your breakfast!\nSee, you are so energetic now that you can almost defeat the opponent!')
 	return factor
 
