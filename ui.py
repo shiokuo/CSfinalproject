@@ -243,7 +243,7 @@ def mind_map():
 def hide():
     '''nothing happen'''    
     screen.blit(background,(0,0))
-    my_font = pygame.font.SysFont('Impact', 40)
+    my_font = pygame.font.SysFont('Impact', 30)
     plot_1=my_font.render('At least you know how to hide from the pressure.',999,(0,199,140))
     x=((640-plot_1.get_width()))/2
     y=((480-plot_1.get_height()))/2
