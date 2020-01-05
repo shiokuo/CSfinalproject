@@ -197,6 +197,8 @@ while True:
                     reward(2)
                 if event.key == K_c:
                     reward(3)
+
+
                     
 
             
